@@ -23,6 +23,16 @@ class TaskController {
         response.json({error: 'No tasks yet!'})
       }
     }
+
+    * delete (request, response) {
+      let taskId = request.param('task_id')
+      let deleteTask = yield Task.query().where('id', taskId).del()
+      if (taskId) {
+      response.json('Task removed!')
+      } else {
+      response.json({error: 'No task to remove.'})
+      }
+    }
 }
 
 module.exports = TaskController
