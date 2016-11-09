@@ -22,21 +22,9 @@ class TodoListController {
 
     * index (request, response) {
       let userId = request.param('id')
-      // let lists = yield Todolist.quer
+      let todoLists = yield List.query().where('user_id', userId)
     }
 
-    * show (request, response) {
-    let listId = request.param('id')
-      //request.param gives back the value of a single thing
-    let list = yield List.find(listId)
-
-    if (list) {
-      response.json(list)
-    } else {
-      response.status(404)
-      response.json({ error: 'No such list'})
-    }
-  }
 }
 
 module.exports = TodoListController
