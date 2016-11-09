@@ -24,4 +24,4 @@ Route.get('/example', 'TodoListController.example')
 
 Route.post('/users', 'UserController.create')
 Route.get('/users/:id', 'UserController.show')
-Rute.delete('/users/:id', 'UserController.delete')
+Route.delete('/users/:id', 'UserController.delete')
