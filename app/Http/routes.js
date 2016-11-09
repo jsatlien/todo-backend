@@ -30,6 +30,6 @@ Route.delete('/users/:id', 'UserController.delete')
 Route.post('/users/:id/lists', 'TodoListController.create')
 Route.get('/users/:id/lists', 'TodoListController.index')
 
-Route.post('/users/:id/lists/tasks', 'TaskController.create')
+Route.post('/users/:id/lists/:list_id/tasks', 'TaskController.create')
 
 // Route.post('users/:id/list_id')

@@ -23,6 +23,11 @@ class TodoListController {
     * index (request, response) {
       let userId = request.param('id')
       let todoLists = yield List.query().where('user_id', userId)
+      if (todoLists) {
+      response.json(todoLists)
+      } else {
+        response.json({error: 'List does not exist.'})
+      }
     }
 
 }
