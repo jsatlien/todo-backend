@@ -30,7 +30,7 @@ class TaskController {
       if (taskId) {
       response.json('Task removed!')
       } else {
-      response.json({error: 'No task to remove.'})
+      response.status(404).json({error: 'No task to remove.'})
       }
     }
 
