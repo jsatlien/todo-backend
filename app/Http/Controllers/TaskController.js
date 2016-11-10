@@ -33,6 +33,16 @@ class TaskController {
       response.json({error: 'No task to remove.'})
       }
     }
+
+    * update (request, response) {
+      let taskId = request.param('task_id')
+      let newData = request.only('title', 'due_date')
+
+      let updatedTask = yield Task.findBy('id', taskId)
+      updatedTask.fill(newData)
+
+      response.json(updatedTask)
+    }
 }
 
 module.exports = TaskController
